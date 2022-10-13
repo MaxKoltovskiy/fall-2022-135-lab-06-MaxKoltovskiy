@@ -1,11 +1,15 @@
-main: main.o funcs.o caesar.o
-	g++ -o main main.o funcs.o caesar.o
+OBJECTS = funcs.o caesar.o vigenere.o
 
-tests: tests.o funcs.o caesar.o
-	g++ -o tests tests.o funcs.o caesar.o
+main: main.o $(OBJECTS)
+	g++ -o main main.o $(OBJECTS)
+
+tests: tests.o $(OBJECTS)
+	g++ -o tests tests.o $(OBJECTS)
 
 test-ascii: test-ascii.o
 	g++ -o test-ascii test-ascii.cpp
+
+vigenere.o: vigenere.cpp vigenere.h
 
 caesar.o: caesar.cpp caesar.h
 
