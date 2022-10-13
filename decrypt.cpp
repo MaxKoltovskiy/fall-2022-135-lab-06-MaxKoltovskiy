@@ -43,15 +43,15 @@ std::string decryptCaesar(std::string cipher, int lshift)
 std::string decryptVigenere(std::string cipher, std::string keyword)
 {
     int keyIndex = 0;
-    char text, key, deshift;
     std::string original;
 
     for(int i = 0; i < cipher.size(); i++) {
-        text = cipher[i];
+        char deshift;
+        char text = cipher[i];
 
         if(isalpha(text)) {
 
-            key = keyword[keyIndex];
+            char key = keyword[keyIndex];
             deshift = deshiftChar(text, key-'a');
             keyIndex++;
             keyIndex %= keyword.size();

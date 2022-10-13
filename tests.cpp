@@ -34,7 +34,7 @@ TEST_CASE("Deshift Char"){
 
 }
 TEST_CASE("Decrypt Caesar"){
-    CHECK(decryptCaesar("F Qnlmy-Djfw Fufwy", 5) == "A Light-Year Apart");
+    CHECK(decryptCaesar("Rovvy, Gybvn!",10) == "Hello, World!");
     CHECK(decryptCaesar("J",2) == "H");
 }
 TEST_CASE("Decrypt Vigenere"){
