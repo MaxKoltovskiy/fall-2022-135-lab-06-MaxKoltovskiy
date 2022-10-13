@@ -23,3 +23,21 @@ TEST_CASE("Encrypt Vigenere"){
     CHECK(encryptVigenere("Hello, World!", "cake") == "Jevpq, Wyvnd!");
     CHECK(encryptVigenere("ABCD","z") == "ZABC");
 }
+TEST_CASE("Deshift Char"){
+    CHECK(deshiftChar('B',5) == 'W');
+    CHECK(deshiftChar('K',10) == 'A');
+    CHECK(deshiftChar('E',30) == 'A');
+    CHECK(deshiftChar('h', 10) == 'x');
+    CHECK(deshiftChar('g',5) == 'b');
+    CHECK(deshiftChar(' ',5) == ' ');
+    CHECK(deshiftChar(';',10) == ';');
+
+}
+TEST_CASE("Decrypt Caesar"){
+    CHECK(decryptCaesar("F Qnlmy-Djfw Fufwy", 5) == "A Light-Year Apart");
+    CHECK(decryptCaesar("J",2) == "H");
+}
+TEST_CASE("Decrypt Vigenere"){
+    CHECK(decryptVigenere("Jevpq, Wyvnd!", "cake") == "Hello, World!");
+    CHECK(decryptVigenere("ZABC","z") == "ABCD");
+}
